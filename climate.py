@@ -74,6 +74,24 @@ def station():
 
     return jsonify(station_)
 
+
+# TOBS Route
+@app.route("/api/v1.0/tobs")
+def tobs():
+    session = Session(engine)
+    target_date = dt.date(2017, 8, 23)
+    delta = dt.timedelta(days=365)
+    query_data = target_date - delta
+
+    results = session.query(Measurement.date, Measurement.tobs).\
+        filter(Measurement.station == 'USC00519281').\
+        filter(Measurement.date >= query_data).all()
+    session.close()
+
+    temperature = {date: tobs for date, tobs in results}
+
+    return jsonify(temperature)
+
 # Run the Flask Application
 if __name__ == '__main__':
     app.run(debug=True)
