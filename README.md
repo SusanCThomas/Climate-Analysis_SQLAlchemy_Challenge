@@ -44,7 +44,7 @@ Performed a basic climate analysis and data exploration of the climate databse u
 
 * Filtered by the station with the highest number of observations
 
-* [Plotted](https://github.com/SusanCThomas/Climate-Analysis_SQLAlchemy_Challenge/blob/main/Images/temp_observe.png)the results as a histogram with `bins=12`
+* [Plotted](https://github.com/SusanCThomas/Climate-Analysis_SQLAlchemy_Challenge/blob/main/Images/temp_observe.png) the results as a histogram with `bins=12`
 
 ## Climate App - Flask API
 Designed a [Flask API](https://github.com/SusanCThomas/Climate-Analysis_SQLAlchemy_Challenge/blob/main/climate.py) based on the queries that were just developed. 
