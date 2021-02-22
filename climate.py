@@ -1,11 +1,13 @@
 # Import Dependencies
 import datetime as dt
 import numpy as np
+import pandas as pd
 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
+
 
 from flask import Flask, jsonify
 
@@ -35,8 +37,8 @@ def home():
         /api/v1.0/precipitation<br/>
         /api/v1.0/station<br/>
         /api/v1.0/tobs<br/>
-        /api/v1.0/start=YYYY-MM-DD<br/>
-        api/v1.0/start=YYYY-MM-DD/end=YYYY-MM-DD;
+        /api/v1.0/<start></br>
+        api/v1.0/<start>/<end></br>
     """
 
 
@@ -91,6 +93,7 @@ def tobs():
     temperature = {date: tobs for date, tobs in results}
 
     return jsonify(temperature)
+       
 
 # Run the Flask Application
 if __name__ == '__main__':
