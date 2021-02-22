@@ -7,7 +7,7 @@ This challenge requires a climate analysis to help plan a trip to Honolulu, Hawa
 ## Climate Analysis and Exploration
 Performed a basic climate analysis and data exploration of the climate databse using Python and SQLAlchemy in a [Jupyter Notebook](https://github.com/SusanCThomas/Climate-Analysis_SQLAlchemy_Challenge/blob/main/climate_starter.ipynb). All of the following analysis was completed using SQLAlchemy ORM queries, Pandas, and Matplotlib:
 
-* Used the provided starter notebook and hawaii.sqlite files to complete climate analysis and data exploration
+* Used the provided starter notebook and [hawaii.sqlite](https://github.com/SusanCThomas/Climate-Analysis_SQLAlchemy_Challenge/tree/main/Resources) files to complete climate analysis and data exploration
 
 * Chose a start date and end date for the trip. Made sure that the vacation range is approximately 3-15 days total
 
@@ -45,3 +45,19 @@ Performed a basic climate analysis and data exploration of the climate databse u
 * Filtered by the station with the highest number of observations
 
 * [Plotted](https://github.com/SusanCThomas/Climate-Analysis_SQLAlchemy_Challenge/blob/main/Images/temp_observe.png)the results as a histogram with `bins=12`
+
+## Climate App - Flask API
+Designed a [Flask API](https://github.com/SusanCThomas/Climate-Analysis_SQLAlchemy_Challenge/blob/main/climate.py) based on the queries that were just developed. 
+
+Created Routes using Flask:
+* /
+    * Home Page
+    * Listed all routes available
+* /api/v1.0/precipitation
+    * Converted the query results to a dictionary using the date as the key and prcp as the value
+    * Returned the JSON representation of the dictionary
+* /api/v1.0/stations
+    * Return a JSON list of stations from the dataset.
+* /api/v1.0/tobs
+    * Query the dates and temperature observations of the most active station for the last year of data.
+    * Return a JSON list of temperature observations (TOBS) for the previous year.
