@@ -51,16 +51,34 @@ Designed a [Flask API](https://github.com/SusanCThomas/Climate-Analysis_SQLAlche
 
 Created Routes using Flask:
 * /
-        * Home Page
-        * Listed all routes available
+    * Home Page
+    * Listed all routes available
     
 * /api/v1.0/precipitation
-        * Converted the query results to a dictionary using the date as the key and prcp as the value
-        * Returned the JSON representation of the dictionary
+    * Converted the query results to a dictionary using the date as the key and prcp as the value
+    * Returned the JSON representation of the dictionary
     
 * /api/v1.0/stations
-        * Return a JSON list of stations from the dataset.
+    * Return a JSON list of stations from the dataset.
     
 * /api/v1.0/tobs
-        * Query the dates and temperature observations of the most active station for the last year of data.
-        * Return a JSON list of temperature observations (TOBS) for the previous year.
+    * Query the dates and temperature observations of the most active station for the last year of data.
+    * Return a JSON list of temperature observations (TOBS) for the previous year.
+
+## Bonus Analysis
+
+### Temperature Analysis 
+
+* The [starter notebook](https://github.com/SusanCThomas/Climate-Analysis_SQLAlchemy_Challenge/blob/main/climate_starter.ipynb) contains a function called `calc_temps` that will accept a start date and end date in the format `%Y-%m-%d`. The function will returned the minimum, average, and maximum temperatures for that range of dates. Calculated the min, avg, and max temperatures for the trip using the matching dates from the previous year.
+
+* [Plotted](https://github.com/SusanCThomas/Climate-Analysis_SQLAlchemy_Challenge/blob/main/Images/avg_trip_temp.png) the min, avg, and max temperature from your previous query as a bar chart
+
+### Daily Rainfall Average
+
+* Calculated the rainfall per weather station using the previous year's matching dates
+
+* Calculated the daily normals. Normals are the averages for the min, avg, and max temperatures.
+
+* Loaded the list of daily normals into a Pandas DataFrame and set the index equal to the date
+
+* Used Pandas to plot an [area plot](https://github.com/SusanCThomas/Climate-Analysis_SQLAlchemy_Challenge/blob/main/Images/daily_normals.png) (`stacked=False`) for the daily normals.
